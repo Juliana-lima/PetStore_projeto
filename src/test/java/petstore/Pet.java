@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 //Criação das classes
 
@@ -42,7 +43,29 @@ public class Pet {
         .then()
                 .log().all()
                 .statusCode(200)
+                .body("name", is("Snoopy"))
+                .body("status", is("available"))
         ;
+
+    }
+
+    //Consulta do pet
+    @Test
+    public void consultarPet(){
+         String petId = "58952417895";
+
+         given()
+                 .contentType("application/json")
+                 .log().all()
+         .when()
+                 .get(uri + "/" + petId)
+
+         .then()
+                 .log().all()
+                 .statusCode(200)
+
+         ;
+
 
     }
 
