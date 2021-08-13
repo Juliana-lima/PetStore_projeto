@@ -1,5 +1,5 @@
-Request method:	GET
-=Request URI:	https://petstore.swagger.io/v2/pet/58952417895
+Request method:	POST
+1Request URI:	https://petstore.swagger.io/v2/pet
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -9,9 +9,29 @@
 2				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:			<none>
+Body:
+{
+    "id": 58952817895,
+    "category": {
+        "token": 5,
+        "name": "dog"
+    },
+    "name": "Snoopy",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+
+        {
+            "id": 2021,
+            "name": "sta"
+
+        }
+    ],
+    "status": "available"
+}
 HTTP/1.1 200 OK
-%Date: Thu, 12 Aug 2021 23:55:59 GMT
+%Date: Fri, 13 Aug 2021 00:20:39 GMT
  Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -21,9 +41,9 @@
  Server: Jetty(9.2.9.v20150224)
 
 {
-    "id": 58952417895,
+    "id": 58952817895,
     "category": {
-        "id": 1,
+        "id": 0,
         "name": "dog"
     },
     "name": "Snoopy",

@@ -52,7 +52,9 @@ public class Pet {
     //Consulta do pet
     @Test
     public void consultarPet(){
-         String petId = "58952417895";
+         String petId = "58952817895";
+
+         String token =
 
          given()
                  .contentType("application/json")
@@ -64,8 +66,12 @@ public class Pet {
                  .log().all()
                  .statusCode(200)
 
+         .extract()
+                 .path("category.name")
+
          ;
 
+        System.out.println("O Token é: " + token);
 
     }
 
